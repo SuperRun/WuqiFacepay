@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_background"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/logo"/>
+
+        <LinearLayout
+            android:layout_width="640dp"
+            android:layout_height="120dp"
+            android:id="@+id/pwdLinearLayout"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_form_item"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="80dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/pwd_icon"
+                android:id="@+id/pwdIconImageView"
+                android:layout_marginLeft="50dp"/>
+
+            <EditText
+                android:layout_height="50dp"
+                android:layout_width="440dp"
+                android:id="@+id/password"
+                android:hint="@string/prompt_password"
+                android:textColorHint="#B3B3B3"
+                android:background="@drawable/shape_input"
+                android:layout_marginLeft="30dp"
+                android:textSize="30dp"
+                android:singleLine="true"
+                android:textColor="#4D4D4D"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:src="@drawable/hide_pwd"
+                android:id="@+id/ifShowImageView"
+                android:layout_marginRight="50dp"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="480dp"
+            android:layout_height="120dp"
+            android:shadowColor="#36535353"
+            android:shadowRadius="30"
+            android:stateListAnimator="@null"
+            android:background="@drawable/shape_btn_logout"
+            android:text="@string/action_logout"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"/>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="64dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

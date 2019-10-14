@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#ffffff"
+    tools:context=".ui.pay.PayActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="50dp">
+        <ImageView
+            android:id="@+id/cancelPay"
+            android:layout_width="@dimen/lg_close_icon_size"
+            android:layout_height="@dimen/lg_close_icon_size"
+            android:src="@drawable/close"/>
+        <TextView
+            android:id="@+id/countTime"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="(120s)"
+            android:textColor="#FF877A"
+            android:textSize="@dimen/lg_time_text_size"
+            android:textFontWeight="400"
+            android:gravity="right"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="@dimen/lg_pay_imgWidth"
+        android:layout_height="@dimen/lg_pay_imgHeight"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/please_pay"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="220dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="@dimen/lg_pay_rmbSign_text_size"
+            android:text="￥"
+            android:textStyle="bold"
+            android:textColor="@color/lgPayMoneyTextColor"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="@dimen/lg_pay_money_text_size"
+            android:text="0.00"
+            android:textStyle="bold"
+            android:textColor="@color/lgPayMoneyTextColor"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="260dp">
+        <Button
+            android:id="@+id/wx_face_pay_btn"
+            android:layout_width="800dp"
+            android:layout_height="185dp"
+            android:shadowColor="#36535353"
+            android:shadowRadius="30"
+            android:stateListAnimator="@null"
+            android:background="@drawable/pay_btn_bg"
+            android:shadowDy="7"
+            android:shadowDx="0"
+            android:outlineAmbientShadowColor="#F96E63"
+            android:layout_marginBottom="70dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/sign" />
+
+    </LinearLayout>
+</LinearLayout>

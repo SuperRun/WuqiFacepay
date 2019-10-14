@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_background"
+    android:gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="@dimen/md_login_logoWidth"
+            android:layout_height="@dimen/md_login_logoHeight"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/logo"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/md_login_layoutWidth"
+            android:layout_height="@dimen/md_login_layoutHeight"
+            android:id="@+id/usernameLinearLayout"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_form_item"
+            android:gravity="center_vertical"
+            android:layout_marginTop="60dp"
+            android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+            android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+            <ImageView
+                android:id="@+id/userIcon"
+                android:layout_width="@dimen/md_login_icon_size"
+                android:layout_height="@dimen/md_login_icon_size"
+                android:src="@drawable/user_icon"/>
+
+            <EditText
+                android:layout_height="50dp"
+                android:layout_width="@dimen/md_login_input_width"
+                android:id="@+id/username"
+                android:hint="@string/prompt_user"
+                android:textColorHint="#B3B3B3"
+                android:background="@drawable/shape_input"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/md_login_input_text_size"
+                android:maxLength="11"
+                android:singleLine="true"
+                android:textColor="#4D4D4D"
+                android:inputType="phone" />
+
+            <ImageView
+                android:layout_width="@dimen/md_login_icon_size"
+                android:layout_height="@dimen/md_login_icon_size"
+                android:id="@+id/clearUserIcon"
+                android:src="@drawable/user_clear"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/md_login_layoutWidth"
+            android:layout_height="@dimen/md_login_layoutHeight"
+            android:id="@+id/pwdLinearLayout"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_form_item"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+            android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+            <ImageView
+                android:layout_width="@dimen/md_login_icon_size"
+                android:layout_height="@dimen/md_login_icon_size"
+                android:src="@drawable/pwd_icon"
+                android:id="@+id/pwdIconImageView"/>
+
+            <EditText
+                android:layout_height="50dp"
+                android:layout_width="@dimen/md_login_input_width"
+                android:id="@+id/password"
+                android:hint="@string/prompt_password"
+                android:textColorHint="#B3B3B3"
+                android:background="@drawable/shape_input"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/md_login_input_text_size"
+                android:singleLine="true"
+                android:textColor="#4D4D4D"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:layout_width="@dimen/md_login_icon_size"
+                android:layout_height="@dimen/md_login_icon_size"
+                android:src="@drawable/hide_pwd"
+                android:id="@+id/ifShowImageView"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#36535353"
+            android:shadowRadius="30"
+            android:stateListAnimator="@null"
+            android:enabled="false"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_btn_unpressed"/>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

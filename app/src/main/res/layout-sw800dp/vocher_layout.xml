@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/lg_vocherWidth"
+    android:layout_height="@dimen/lg_vocherHeight"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/vocher_bg">
+    <Button
+        android:id="@+id/closeVocher"
+        android:layout_width="@dimen/lg_vocher_close_size"
+        android:layout_height="@dimen/lg_vocher_close_size"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/lg_vocher_close_marginRight"
+        android:background="@drawable/vocher_close"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vocher_title"
+        android:letterSpacing="0.2"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="@dimen/lg_vocher_title_marginTop"
+        android:textSize="@dimen/lg_vocher_title_textSize">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lg_vocher_info_marginTop"
+        android:background="@drawable/vocher_text_bg"
+        android:gravity="center"
+        android:letterSpacing="0.2"
+        android:text="满20减6"
+        android:textStyle="bold"
+        android:textColor="@color/vocherInfoTextColor"
+        android:textSize="@dimen/lg_vocher_info_textSize"/>
+
+    <Button
+        android:id="@+id/getVocher"
+        android:layout_width="@dimen/lg_vocher_btnWidth"
+        android:layout_height="@dimen/lg_vocher_btnHeight"
+        android:layout_marginTop="@dimen/lg_vocher_btn_marginTop"
+        android:background="@drawable/shape_btn_vocher"
+        android:text="@string/vocher_btn_text"
+        android:textSize="@dimen/lg_vocher_btn_textSize"
+        android:textFontWeight="800"
+        android:letterSpacing="0.1"
+        android:textStyle="bold"
+        android:textColor="@color/vocherBtnTextColor"/>
+</LinearLayout>

@@ -1,0 +1,172 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="default_corner_radius">4dp</dimen>
+    <dimen name="default_shadow_radius">4dp</dimen>
+    <dimen name="carousel_img_circle_size">26dp</dimen>
+
+    <!--    屏幕宽度大于800-->
+    <!--    login-->
+    <dimen name="lg_login_logoWidth">350dp</dimen>
+    <dimen name="lg_login_logoHeight">145dp</dimen>
+    <dimen name="lg_login_inputWidth">442dp</dimen>
+    <dimen name="lg_login_inputHeight">50dp</dimen>
+    <dimen name="lg_login_input_text_size">30dp</dimen>
+    <dimen name="lg_login_input_marginLeft">18dp</dimen>
+    <dimen name="lg_login_layoutWidth">640dp</dimen>
+    <dimen name="lg_login_layoutHeight">120dp</dimen>
+    <dimen name="lg_login_layout_paddingLeft">50dp</dimen>
+    <dimen name="lg_login_layout_paddingRight">50dp</dimen>
+    <dimen name="lg_login_icon_size">40dp</dimen>
+    <dimen name="lg_login_btn_width">220dp</dimen>
+    <dimen name="lg_login_btn_height">60dp</dimen>
+    <dimen name="lg_login_btn_icon_width">40dp</dimen>
+    <dimen name="lg_login_btn_icon_height">20dp</dimen>
+
+
+    <!--    pay-->
+    <dimen name="lg_close_icon_size">100dp</dimen>
+    <dimen name="lg_time_text_size">40dp</dimen>
+    <dimen name="lg_pay_imgWidth">500dp</dimen>
+    <dimen name="lg_pay_imgHeight">316dp</dimen>
+    <dimen name="lg_pay_rmbSign_text_size">120dp</dimen>
+    <dimen name="lg_pay_money_text_size">180dp</dimen>
+    <dimen name="lg_pay_btnWidth">240dp</dimen>
+    <dimen name="lg_pay_btnHeight">50dp</dimen>
+    <dimen name="lg_pay_btn_text_size">18dp</dimen>
+    <dimen name="lg_pay_dividerWidth">100dp</dimen>
+    <dimen name="lg_pay_dividerHeight">2dp</dimen>
+    <dimen name="lg_pay_logoWidth">104dp</dimen>
+    <dimen name="lg_pay_logoHeight">20dp</dimen>
+
+    <!--    result-->
+    <dimen name="lg_result_adHeight">703dp</dimen>
+    <dimen name="lg_result_payLogo">128dp</dimen>
+    <dimen name="lg_result_tip_textSize">40dp</dimen>
+    <dimen name="lg_result_failed_tip_textSize">50dp</dimen>
+    <dimen name="lg_result_rmbSign_textSize">50dp</dimen>
+    <dimen name="lg_result_money_textSize">100dp</dimen>
+    <dimen name="lg_result_showTime">4000</dimen>
+    <dimen name="lg_result_member_btnWidth">500dp</dimen>
+    <dimen name="lg_result_member_btnHeight">100dp</dimen>
+    <dimen name="lg_result_member_textSize">40dp</dimen>
+    <dimen name="lg_result_member_marginBottom">88dp</dimen>
+
+    <!--    vocher-->
+    <dimen name="lg_vocherWidth">400dp</dimen>
+    <dimen name="lg_vocherHeight">560dp</dimen>
+    <dimen name="lg_vocher_close_size">40dp</dimen>
+    <dimen name="lg_vocher_close_marginRight">20dp</dimen>
+    <dimen name="lg_vocher_title_textSize">30dp</dimen>
+    <dimen name="lg_vocher_title_marginTop">120dp</dimen>
+    <dimen name="lg_vocher_infoWidth">208dp</dimen>
+    <dimen name="lg_vocher_infoHeight">968dp</dimen>
+    <dimen name="lg_vocher_info_textSize">60dp</dimen>
+    <dimen name="lg_vocher_info_marginTop">80dp</dimen>
+    <dimen name="lg_vocher_btnWidth">340dp</dimen>
+    <dimen name="lg_vocher_btnHeight">80dp</dimen>
+    <dimen name="lg_vocher_btn_marginTop">95dp</dimen>
+    <dimen name="lg_vocher_btn_textSize">28dp</dimen>
+    <dimen name="lg_vocher_showTime">5000</dimen>
+
+    <!-- member-->
+    <dimen name="lg_member_layout_padding">40dp</dimen>
+    <dimen name="lg_member_closeSize">70dp</dimen>
+    <dimen name="lg_member_titleSize">45dp</dimen>
+    <dimen name="lg_member_layout_inputWidth">500dp</dimen>
+    <dimen name="lg_member_layout_inputHeight">80dp</dimen>
+    <dimen name="lg_member_input_textSzie">30dp</dimen>
+    <dimen name="lg_member_input_width">400dp</dimen>
+    <dimen name="lg_member_btn_width">300dp</dimen>
+    <dimen name="lg_member_btn_height">80dp</dimen>
+    <dimen name="lg_member_btn_textSize">28dp</dimen>
+
+
+    <!--    屏幕宽度小于800-->
+    <!--    login-->
+    <dimen name="md_login_logoWidth">184.5dp</dimen>
+    <dimen name="md_login_logoHeight">72.5dp</dimen>
+    <dimen name="md_login_input_width">180dp</dimen>
+    <dimen name="md_login_input_text_size">16dp</dimen>
+    <dimen name="md_login_input_marginLeft">18dp</dimen>
+    <dimen name="md_login_layoutWidth">280dp</dimen>
+    <dimen name="md_login_layoutHeight">50dp</dimen>
+    <dimen name="md_login_layout_paddingLeft">20dp</dimen>
+    <dimen name="md_login_layout_paddingRight">20dp</dimen>
+    <dimen name="md_login_icon_size">20dp</dimen>
+    <dimen name="md_login_btn_width">220dp</dimen>
+    <dimen name="md_login_btn_height">60dp</dimen>
+    <dimen name="md_login_btn_icon_width">40dp</dimen>
+    <dimen name="md_login_btn_icon_height">20dp</dimen>
+
+    <!--    logout-->
+    <dimen name="md_logout_logo_size">200dp</dimen>
+    <dimen name="md_logout_input_width">160dp</dimen>
+    <dimen name="md_logout_input_text_size">16dp</dimen>
+    <dimen name="md_logout_input_marginLeft">18dp</dimen>
+    <dimen name="md_logout_layoutWidth">260dp</dimen>
+    <dimen name="md_logout_layoutHeight">60dp</dimen>
+    <dimen name="md_logout_layout_paddingLeft">20dp</dimen>
+    <dimen name="md_logout_layout_paddingRight">20dp</dimen>
+    <dimen name="md_logout_icon_size">20dp</dimen>
+    <dimen name="md_logout_btn_width">220dp</dimen>
+    <dimen name="md_logout_btn_height">60dp</dimen>
+    <dimen name="md_logout_btn_text_size">18dp</dimen>
+
+    <!--    pay-->
+    <!--    倒计时-->
+    <dimen name="md_close_icon_size">40dp</dimen>
+    <dimen name="md_time_text_size">20dp</dimen>
+
+    <!--    支付提示图片大小-->
+    <dimen name="md_pay_imgWidth">210dp</dimen>
+    <dimen name="md_pay_imgHeight">140dp</dimen>
+
+    <!--     金额字体大小-->
+    <dimen name="md_pay_rmbSign_text_size">60dp</dimen>
+    <dimen name="md_pay_money_text_size">100dp</dimen>
+
+    <!--     刷脸支付按钮-->
+    <dimen name="md_pay_btnWidth">280dp</dimen>
+    <dimen name="md_pay_btnHeight">60dp</dimen>
+    <dimen name="md_pay_btn_text_size">18dp</dimen>
+
+    <!--    分割线-->
+    <dimen name="md_pay_dividerWidth">100dp</dimen>
+    <dimen name="md_pay_dividerHeight">2dp</dimen>
+
+    <!--    logo-->
+    <dimen name="md_pay_logoWidth">104dp</dimen>
+    <dimen name="md_pay_logoHeight">20dp</dimen>
+
+
+    <!--    result-->
+    <dimen name="md_result_adHeight">300dp</dimen>
+    <dimen name="md_result_payLogo">50dp</dimen>
+    <dimen name="md_result_tip_textSize">30dp</dimen>
+    <dimen name="md_result_rmbSign_textSize">30dp</dimen>
+    <dimen name="md_result_money_textSize">60dp</dimen>
+    <dimen name="md_result_failed_tip_textSize">20dp</dimen>
+
+    <!--    vocher-->
+    <dimen name="md_vocherWidth">300dp</dimen>
+    <dimen name="md_vocherHeight">421dp</dimen>
+
+    <dimen name="md_vocher_close_size">30dp</dimen>
+    <dimen name="md_vocher_close_marginRight">20dp</dimen>
+
+    <dimen name="md_vocher_title_textSize">25dp</dimen>
+    <dimen name="md_vocher_title_marginTop">80dp</dimen>
+
+    <dimen name="md_vocher_infoWidth">209dp</dimen>
+    <dimen name="md_vocher_infoHeight">85dp</dimen>
+    <dimen name="md_vocher_info_textSize">30dp</dimen>
+    <dimen name="md_vocher_info_marginTop">40dp</dimen>
+
+    <dimen name="md_vocher_btnWidth">180dp</dimen>
+    <dimen name="md_vocher_btnHeight">50dp</dimen>
+    <dimen name="md_vocher_btn_marginTop">54dp</dimen>
+    <dimen name="md_vocher_btn_textSize">20dp</dimen>
+
+</resources>

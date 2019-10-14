@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:id="@+id/payResult"
+    tools:context=".ui.result.SuccessActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="18dp">
+        <ImageView
+            android:id="@+id/cancelPay"
+            android:layout_width="@dimen/md_close_icon_size"
+            android:layout_height="@dimen/md_close_icon_size"
+            android:src="@drawable/close"/>
+        <TextView
+            android:id="@+id/countTime"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="(3s)"
+            android:textColor="#FF877A"
+            android:textSize="@dimen/md_time_text_size"
+            android:textFontWeight="400"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wxPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/wxIcon"
+            android:layout_width="@dimen/md_result_payLogo"
+            android:layout_height="@dimen/md_result_payLogo"
+            android:outlineAmbientShadowColor="#3824A838"
+            android:src="@drawable/result_failed"
+            android:layout_marginRight="10dp"
+            android:translationZ="100dp" />
+
+        <TextView
+            android:id="@+id/resultTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/wxIcon"
+            android:gravity="center"
+            android:text="@string/result_failed"
+            android:textColor="@color/resultFailedTextColor"
+            android:textSize="@dimen/md_result_tip_textSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ad"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="145dp"
+        android:gravity="center"
+        android:text="@string/result_failed_tip"
+        android:textColor="@color/resultTipFailedTextColor"
+        android:textSize="@dimen/md_result_failed_tip_textSize" />
+
+    <ImageView
+        android:id="@+id/ad"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/md_result_adHeight"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ad_position"/>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="120dp"
+    android:paddingRight="120dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:background="@drawable/shape_toast">
+    <TextView
+        android:id="@+id/toastMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToastMsg"
+        android:textSize="30dp"
+        android:textColor="#ffffff"/>
+</LinearLayout>
