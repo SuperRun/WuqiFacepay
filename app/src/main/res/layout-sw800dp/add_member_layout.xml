@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/shape_corner"
+    android:gravity="center_horizontal"
+    android:paddingTop="@dimen/lg_member_layout_padding"
+    android:paddingBottom="60dp"
+    android:paddingLeft="@dimen/lg_member_layout_padding"
+    android:paddingRight="@dimen/lg_member_layout_padding"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/closeMember"
+        android:layout_width="@dimen/lg_member_closeSize"
+        android:layout_height="@dimen/lg_member_closeSize"
+        android:background="@drawable/close"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/lg_member_titleSize"
+        android:text="开通会员"
+        android:textColor="@color/colorBlack"/>
+
+    <LinearLayout
+        android:layout_width="@dimen/lg_member_layout_inputWidth"
+        android:layout_height="@dimen/lg_member_layout_inputHeight"
+        android:id="@+id/staffaccountLinearLayout"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_form_item"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+        android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+        <EditText
+            android:layout_height="50dp"
+            android:layout_width="@dimen/lg_member_input_width"
+            android:id="@+id/staffAccount"
+            android:hint="@string/member_staff_account"
+            android:textColorHint="#B3B3B3"
+            android:background="@drawable/shape_input"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/lg_member_input_textSzie"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textColor="#4D4D4D"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/lg_member_layout_inputWidth"
+        android:layout_height="@dimen/lg_member_layout_inputHeight"
+        android:id="@+id/usernameLinearLayout"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_form_item"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+        android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+        <EditText
+            android:layout_height="50dp"
+            android:layout_width="@dimen/lg_member_input_width"
+            android:id="@+id/username"
+            android:hint="@string/name_promot"
+            android:textColorHint="#B3B3B3"
+            android:background="@drawable/shape_input"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/lg_member_input_textSzie"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textColor="#4D4D4D"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/lg_member_layout_inputWidth"
+        android:layout_height="@dimen/lg_member_layout_inputHeight"
+        android:id="@+id/phoneLinearLayout"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_form_item"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+        android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+        <EditText
+            android:layout_height="50dp"
+            android:layout_width="@dimen/lg_member_input_width"
+            android:id="@+id/phone"
+            android:hint="@string/phone_promot"
+            android:textColorHint="#B3B3B3"
+            android:background="@drawable/shape_input"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/lg_member_input_textSzie"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textColor="#4D4D4D"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/lg_member_layout_inputWidth"
+        android:layout_height="@dimen/lg_member_layout_inputHeight"
+        android:id="@+id/genderLinearLayout"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_form_item"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+        android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+        <EditText
+            android:layout_height="50dp"
+            android:layout_width="@dimen/lg_member_input_width"
+            android:id="@+id/gender"
+            android:hint="@string/gender_promot"
+            android:textColorHint="#B3B3B3"
+            android:background="@drawable/shape_input"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/lg_member_input_textSzie"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textColor="#4D4D4D"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/lg_member_layout_inputWidth"
+        android:layout_height="@dimen/lg_member_layout_inputHeight"
+        android:id="@+id/birthLinearLayout"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_form_item"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/md_login_layout_paddingLeft"
+        android:paddingRight="@dimen/md_login_layout_paddingRight">
+
+        <EditText
+            android:layout_height="50dp"
+            android:layout_width="@dimen/lg_member_input_width"
+            android:id="@+id/birth"
+            android:hint="@string/birthday_promot"
+            android:textColorHint="#B3B3B3"
+            android:background="@drawable/shape_input"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/lg_member_input_textSzie"
+            android:maxLength="11"
+            android:singleLine="true"
+            android:textColor="#4D4D4D"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addMemberBtn"
+        android:layout_width="@dimen/lg_member_btn_width"
+        android:layout_height="@dimen/lg_member_btn_height"
+        android:layout_marginTop="60dp"
+        android:text="@string/add_member_btn_promot"
+        android:textSize="@dimen/lg_member_btn_textSize"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_btn_member_unpressed"/>
+</LinearLayout>
