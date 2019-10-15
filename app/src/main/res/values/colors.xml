@@ -4,8 +4,8 @@
     <color name="colorPrimaryLight">#FF907D</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="default_shadow_color">#0FFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="transparentWhite">#80FFFFFF</color>

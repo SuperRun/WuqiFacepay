@@ -19,11 +19,11 @@ import com.tencent.wxpayface.IWxPayfaceCallback;
 import com.tencent.wxpayface.WxPayFace;
 import com.tencent.wxpayface.WxfacePayCommonCode;
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.service.FacePayService;
 import com.wuqi.facepay.ui.carousel.CarouselActivity;
 import com.wuqi.facepay.ui.result.FailedActivity;
 import com.wuqi.facepay.ui.result.SuccessActivity;
 import com.wuqi.facepay.util.CommonUtils;
-import com.wuqi.facepay.util.FacePay;
 import com.wuqi.facepay.util.ToastUtils;
 
 import java.util.HashMap;
@@ -161,7 +161,7 @@ public class PayActivity extends AppCompatActivity {
         WxPayFace.getInstance().getWxpayfaceCode(params, new IWxPayfaceCallback() {
             @Override
             public void response(Map info) throws RemoteException {
-            if (!FacePay.isSuccessInfo(info)) {
+            if (!FacePayService.isSuccessInfo(info)) {
                 wxFacePayBtn.setEnabled(true);
                 return;
             }
@@ -347,7 +347,7 @@ public class PayActivity extends AppCompatActivity {
 
     protected void finishTask(){
         timer.cancel();
-        FacePay.releasePayFace(getApplicationContext());
+        FacePayService.releasePayFace(getApplicationContext());
     }
 
 }

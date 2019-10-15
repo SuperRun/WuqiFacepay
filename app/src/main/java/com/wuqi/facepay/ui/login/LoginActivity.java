@@ -21,8 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.service.FacePayService;
 import com.wuqi.facepay.ui.carousel.CarouselActivity;
-import com.wuqi.facepay.util.FacePay;
 import com.wuqi.facepay.util.StringUtils;
 import com.wuqi.facepay.util.ToastUtils;
 
@@ -181,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
                     result = loginViewModel.login(usernameEditText.getText().toString(), passwordEditText.getText().toString());
                     if (result == R.string.login_success){
                         // 登录成功后初始化微信支付app
-                        FacePay.initPayFace(getApplicationContext());
+                        FacePayService.initPayFace(getApplicationContext());
                         mhandler.postDelayed(runnable1, 1000);
                     }else {
                         mhandler.postDelayed(runnable2, 1000);

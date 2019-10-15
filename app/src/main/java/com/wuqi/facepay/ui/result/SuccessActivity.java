@@ -15,9 +15,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.data.Result;
+import com.wuqi.facepay.model.SingleBaseConfig;
 import com.wuqi.facepay.ui.carousel.CarouselActivity;
+import com.wuqi.facepay.ui.member.FaceDepthRegisterActivity;
+import com.wuqi.facepay.ui.member.FaceIRRegisterActivity;
+import com.wuqi.facepay.ui.member.FaceRGBRegisterActivity;
+
+import java.util.List;
+import java.util.regex.Matcher;
 
 /**
  * @ClassName SuccessActivity
@@ -149,7 +158,7 @@ public class SuccessActivity extends AppCompatActivity {
         memberDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                 payCountDownTimer.start();
+                // payCountDownTimer.start();
             }
         });
 
@@ -158,6 +167,57 @@ public class SuccessActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 memberDialog.dismiss();
+//                payCountDownTimer.cancel();
+
+                // 判断活体类型
+                int liveType = SingleBaseConfig.getBaseConfig().getType();
+                Log.d(TAG, "liveType = " + liveType);
+                if (liveType == 1 || liveType == 2) { // RGB
+                    if (liveType == 1) {
+                        Log.d(TAG, "当前活体策略：无活体");
+                    } else {
+                        Log.d(TAG, "当前活体策略：RGB活体");
+                    }
+                    Intent intent = new Intent(SuccessActivity.this, FaceRGBRegisterActivity.class);
+                    intent.putExtra("group_id", "group_1");
+                    intent.putExtra("user_name", "luo");
+                    Log.d(TAG, "页面跳转");
+                    startActivityForResult(intent, PICK_REG_VIDEO);
+                    finish();
+
+                } else if (liveType == 3) { // NIR
+                    Log.d(TAG, "当前活体策略：IR活体");
+                    Intent intent = new Intent(SuccessActivity.this, FaceIRRegisterActivity.class);
+                    intent.putExtra("group_id", "group_1");
+                    intent.putExtra("user_name", "luo");
+                    startActivity(intent);
+                    finish();
+
+                } else if (liveType == 4) { // Depth
+
+                    int cameraType = SingleBaseConfig.getBaseConfig().getCameraType();
+                    switch (cameraType) {
+                        case 1: {
+                            Intent proIntent = new Intent(SuccessActivity.this, FaceDepthRegisterActivity.class);
+                            proIntent.putExtra("group_id", "group_1");
+                            proIntent.putExtra("user_name", "luo");
+                            startActivity(proIntent);
+                            finish();
+                        }
+                        break;
+                        case 2: { // atlas
+                            Intent proIntent = new Intent(SuccessActivity.this, FaceDepthRegisterActivity.class);
+                            proIntent.putExtra("group_id", "group_1");
+                            proIntent.putExtra("user_name", "luo");
+                            startActivity(proIntent);
+                            finish();
+                            finish();
+                        }
+                        break;
+                        default:
+                            break;
+                    }
+                }
             }
         });
     }

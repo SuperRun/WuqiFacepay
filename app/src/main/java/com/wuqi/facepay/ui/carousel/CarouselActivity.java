@@ -12,12 +12,12 @@ import android.view.KeyEvent;
 import android.widget.ViewFlipper;
 
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.service.AuthService;
+import com.wuqi.facepay.service.FacePayService;
 import com.wuqi.facepay.ui.logout.LogoutActivity;
 import com.wuqi.facepay.ui.pay.PayActivity;
 import com.wuqi.facepay.util.CommonUtils;
 import com.wuqi.facepay.util.DateUtils;
-import com.wuqi.facepay.util.FacePay;
-import com.wuqi.facepay.util.StringUtils;
 
 public class CarouselActivity extends AppCompatActivity {
     private String money = "";
@@ -33,24 +33,50 @@ public class CarouselActivity extends AppCompatActivity {
         ViewFlipper viewFlipper = findViewById(R.id.viewFlipper);
         viewFlipper.setFlipInterval(4000);
 
-//        Log.d(TAG, String.valueOf(MIN_MONEY));
         Log.d(TAG, "lifecycle onCreate: ");
 
+        // 获取微信刷脸支付的authToken
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        String expiresIn = sharedPref.getString(getString(R.string.expires_in), null);
-        String saveTime = sharedPref.getString(getString(R.string.saved_time), null);
-//        Log.d(TAG, "onCreate saveTime= " + saveTime);
-//        Log.d(TAG, "onCreate expiresIn= " + expiresIn);
-
-        if (saveTime == null || expiresIn == null){
+        long expiresIn = sharedPref.getLong(getString(R.string.authinfo_expires_in), 0);
+        String authInfo = sharedPref.getString(getString(R.string.saved_auth_info), null);
+        long saveTime = sharedPref.getLong(getString(R.string.auth_saved_time), 0);
+        Log.d(TAG, "==onCreate expiresIn== " + expiresIn);
+        Log.d(TAG, "==onCreate authInfo== " + authInfo);
+        Log.d(TAG, "==onCreate saveTime== " + saveTime);
+        if (authInfo == null){
             // 第一次需要初始化
-            FacePay.initPayFace(getApplicationContext());
+            FacePayService.initPayFace(getApplicationContext());
 
-        } else if (saveTime != null && expiresIn != null){
+        } else {
             // 如果authInfo过期需要重新初始化
-            if (DateUtils.getSecondPoor(saveTime) > Long.parseLong(expiresIn)){
-                FacePay.initPayFace(getApplicationContext());
+            if (saveTime == 0 || DateUtils.getSecondPoor(saveTime) > expiresIn){
+                FacePayService.initPayFace(getApplicationContext());
             }
+        }
+
+        // 启动新线程网络请求
+
+        String token = sharedPref.getString(getString(R.string.token_access), null);
+        long tokenSaveTime = sharedPref.getLong(getString(R.string.token_saved_time), 0);
+        long tokenExpiresIn = sharedPref.getLong(getString(R.string.token_expires_in), 0);
+        Log.d(TAG, "==onCreate token== " + token);
+        Log.d(TAG, "==onCreate tokenSaveTime== " + tokenSaveTime);
+        Log.d(TAG, "==onCreate tokenExpiresIn== " + tokenExpiresIn);
+        if (token == null || tokenSaveTime==0 || tokenExpiresIn==0 || DateUtils.getSecondPoor(tokenSaveTime) > tokenExpiresIn){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // 获取百度刷脸的access_token
+                    Log.d(TAG, "== 重新获取token ==");
+                    String token = AuthService.getAuth();
+                    SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString(getString(R.string.token_access), token);
+                    editor.putLong(getString(R.string.token_expires_in), 2592000);
+                    editor.putLong(getString(R.string.token_saved_time), System.currentTimeMillis());
+                    editor.commit();
+                }
+            }).start();
         }
     }
 
@@ -93,6 +119,7 @@ public class CarouselActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "lifecycle onStart: ");
+
     }
 
     @Override
@@ -100,17 +127,17 @@ public class CarouselActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(TAG, "lifecycle onRestart: ");
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        String expiresIn = sharedPref.getString(getString(R.string.expires_in), null);
-        String saveTime = sharedPref.getString(getString(R.string.saved_time), null);
+        long expiresIn = sharedPref.getLong(getString(R.string.authinfo_expires_in), 0);
+        long saveTime = sharedPref.getLong(getString(R.string.auth_saved_time), 0);
 
-        if (saveTime == null || expiresIn == null){
+        if (saveTime == 0 || expiresIn == 0){
             // 第一次需要初始化
-            new FacePay().initPayFace(getApplicationContext());
+            FacePayService.initPayFace(getApplicationContext());
 
-        } else if (saveTime != null && expiresIn != null){
+        } else if (saveTime != 0 && expiresIn != 0){
             // 如果authInfo过期需要重新初始化
-            if (DateUtils.getSecondPoor(saveTime) > Long.parseLong(expiresIn)){
-                new FacePay().initPayFace(getApplicationContext());
+            if (DateUtils.getSecondPoor(saveTime) > expiresIn){
+                FacePayService.initPayFace(getApplicationContext());
             }
         }
 

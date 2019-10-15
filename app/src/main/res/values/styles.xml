@@ -17,9 +17,6 @@
         <item name="android:windowTransitionBackgroundFadeDuration">3000</item>
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:width">500sp</item>
-<!--        <item name="android:windowAnimationStyle">@style/ThemeOverlay.AppCompat.Dialog</item>-->
-<!--        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>-->
-<!--        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>-->
     </style>
 
     <style name="MemberDialog" parent="VocherDialog"></style>

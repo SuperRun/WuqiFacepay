@@ -1,4 +1,4 @@
-package com.wuqi.facepay.util;
+package com.wuqi.facepay.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,6 +9,7 @@ import com.tencent.wxpayface.IWxPayfaceCallback;
 import com.tencent.wxpayface.WxPayFace;
 import com.tencent.wxpayface.WxfacePayCommonCode;
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.util.ReturnXMLParser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,12 +31,12 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * @ClassName DateUtils
- * @Description 刷脸支付工具类
+ * @ClassName FacePayService
+ * @Description 微信刷脸支付类
  * @Author Luo Yi
  * @Date 2019/10/7 20:03
  */
-public class FacePay {
+public class FacePayService {
 
     private static String TAG = "FacePay";
 
@@ -233,8 +234,8 @@ public class FacePay {
                         Log.d(TAG, "onResponse | expiresIn " + expiresIn);
 
 
-                        editor.putString(context.getString(R.string.expires_in), expiresIn);
-                        editor.putString(context.getString(R.string.saved_time), String.valueOf(System.currentTimeMillis()));
+                        editor.putString(context.getString(R.string.authinfo_expires_in), expiresIn);
+                        editor.putString(context.getString(R.string.auth_saved_time), String.valueOf(System.currentTimeMillis()));
                         editor.commit();
 
                     } catch (Exception e) {
