@@ -12,24 +12,30 @@ import android.view.KeyEvent;
 import android.widget.ViewFlipper;
 
 import com.wuqi.facepay.R;
+import com.wuqi.facepay.listener.SdkInitListener;
+import com.wuqi.facepay.manager.FaceSDKManager;
 import com.wuqi.facepay.service.AuthService;
 import com.wuqi.facepay.service.FacePayService;
 import com.wuqi.facepay.ui.logout.LogoutActivity;
+import com.wuqi.facepay.ui.member.FaceAuthActivity;
 import com.wuqi.facepay.ui.pay.PayActivity;
 import com.wuqi.facepay.util.CommonUtils;
 import com.wuqi.facepay.util.DateUtils;
+import com.wuqi.facepay.util.ToastUtils;
 
 public class CarouselActivity extends AppCompatActivity {
     private String money = "";
     private String TAG = "CarouselActivity";
     private double MAX_MONEY = 50000;
     private double MIN_MONEY = 0.01;
+    private Context mContext = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carousel);
-        Log.d(TAG, "TaskID = " + getTaskId());
+
+        mContext = this;
         ViewFlipper viewFlipper = findViewById(R.id.viewFlipper);
         viewFlipper.setFlipInterval(4000);
 
@@ -78,6 +84,9 @@ public class CarouselActivity extends AppCompatActivity {
                 }
             }).start();
         }
+
+        // 初始化鉴权
+        initLicense();
     }
 
     @SuppressLint("LongLogTag")
@@ -142,6 +151,41 @@ public class CarouselActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    /**
+     * 启动应用程序，如果之前初始过，自动初始化鉴权和模型（可以添加到Application 中）
+     */
+    private void initLicense() {
+        if (FaceSDKManager.initStatus != FaceSDKManager.SDK_MODEL_LOAD_SUCCESS) {
+            FaceSDKManager.getInstance().init(mContext, new SdkInitListener() {
+                @Override
+                public void initStart() {
+
+                }
+
+                @Override
+                public void initLicenseSuccess() {
+
+                }
+
+                @Override
+                public void initLicenseFail(int errorCode, String msg) {
+                    // 如果授权失败，跳转授权页面
+                    ToastUtils.toast(mContext, errorCode + msg);
+                    startActivity(new Intent(mContext, FaceAuthActivity.class));
+                }
+
+                @Override
+                public void initModelSuccess() {
+                }
+
+                @Override
+                public void initModelFail(int errorCode, String msg) {
+
+                }
+            });
+        }
     }
 
     @Override

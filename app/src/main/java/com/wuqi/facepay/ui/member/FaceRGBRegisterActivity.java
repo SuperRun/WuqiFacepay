@@ -73,6 +73,7 @@ public class FaceRGBRegisterActivity extends BaseActivity implements View.OnClic
     private Bitmap rgbBitmap = null;
 
     private String TAG = "FaceRGBRegisterActivity";
+    private int PAGE_TYPE = 999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +139,7 @@ public class FaceRGBRegisterActivity extends BaseActivity implements View.OnClic
         } else if (view == setButton) {
             Intent intent = new Intent(this, CarouselActivity.class);
             intent.putExtra("page_type", "register");
-            startActivityForResult(intent, 999); // PAGE_TYPE
+            startActivityForResult(intent, PAGE_TYPE); // PAGE_TYPE
             finish();
         }
     }
@@ -448,6 +449,8 @@ public class FaceRGBRegisterActivity extends BaseActivity implements View.OnClic
                         // 做延时 finish
                         new Handler().postDelayed(new Runnable() {
                             public void run() {
+                                // 注册成功跳转到广告页面
+                                startActivity(new Intent(FaceRGBRegisterActivity.this, CarouselActivity.class));
                                 FaceRGBRegisterActivity.this.finish();
                             }
                         }, 1000);

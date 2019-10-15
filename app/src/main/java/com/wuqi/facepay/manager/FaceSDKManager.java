@@ -38,6 +38,7 @@ import static com.wuqi.facepay.model.GlobalSet.FEATURE_SIZE;
 import static com.wuqi.facepay.model.GlobalSet.TIME_TAG;
 
 public class FaceSDKManager {
+    private String TAG = "FaceSDKManager";
 
     public static final int SDK_MODEL_LOAD_SUCCESS = 0;
     public static final int SDK_UNACTIVATION = 1;
@@ -104,8 +105,10 @@ public class FaceSDKManager {
 
         // 如果licenseKey 不存在提示授权码为空，并跳转授权页面授权
         if (TextUtils.isEmpty(licenseOfflineKey) && TextUtils.isEmpty(licenseOnlineKey)) {
+            Log.d(TAG, "未授权设备，请完成授权激活");
             ToastUtils.toast(context, "未授权设备，请完成授权激活");
             if (listener != null) {
+                Log.d(TAG, "授权码不存在，请重新输入！");
                 listener.initLicenseFail(-1, "授权码不存在，请重新输入！");
             }
             return;
@@ -162,7 +165,7 @@ public class FaceSDKManager {
      * @param listener
      */
     public void initModel(final Context context, final SdkInitListener listener) {
-        ToastUtils.toast(context, "模型初始化中，请稍后片刻");
+        Log.d(TAG, "模型初始化中，请稍后片刻");
 
         initConfig();
 
@@ -225,7 +228,7 @@ public class FaceSDKManager {
                         long endInitModelTime = System.currentTimeMillis();
                         Log.e(TIME_TAG, "init model time = " + (endInitModelTime - startInitModelTime));
                         if (code != 0) {
-                            ToastUtils.toast(context, "模型加载失败");
+                            Log.d(TAG, "模型加载失败");
                             if (listener != null) {
                                 listener.initModelFail(code, response);
                             }
@@ -233,7 +236,7 @@ public class FaceSDKManager {
                             initStatus = SDK_MODEL_LOAD_SUCCESS;
                             // 模型初始化成功，加载人脸数据
                             initDataBases(context);
-                            ToastUtils.toast(context, "模型加载完毕，欢迎使用");
+                            Log.d(TAG, "模型加载完毕，欢迎使用");
                             if (listener != null) {
                                 listener.initModelSuccess();
                             }
